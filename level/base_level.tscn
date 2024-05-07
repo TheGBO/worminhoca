@@ -1,17 +1,106 @@
-[gd_scene load_steps=6 format=3 uid="uid://dggnw1g0o7nul"]
+[gd_scene load_steps=12 format=3 uid="uid://dggnw1g0o7nul"]
 
 [ext_resource type="PackedScene" uid="uid://bcvy1s5tfeldp" path="res://common/level_game_manager.tscn" id="1_u5r7q"]
 [ext_resource type="TileSet" uid="uid://darg4e2kyui5n" path="res://assets/tileset.tres" id="2_3186n"]
+[ext_resource type="PackedScene" uid="uid://cyp8iwwrx6dq8" path="res://ui/level_ui.tscn" id="5_0uc7x"]
+[ext_resource type="Texture2D" uid="uid://xt3yohtfc7gr" path="res://ui/death/skull.png" id="6_ni57o"]
 [ext_resource type="PackedScene" uid="uid://dwe51q20dr2gn" path="res://common/kill_zone.tscn" id="7_fy1xb"]
+[ext_resource type="AudioStream" uid="uid://dq3prnbh4fbe3" path="res://ui/death/dies irae.mp3" id="7_hdxs8"]
 [ext_resource type="PackedScene" uid="uid://c27srkutp4j4c" path="res://player/player.tscn" id="8_2lopg"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_av2if"]
 distance = -74.0
 
+[sub_resource type="Animation" id="Animation_wqo58"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DarknessRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Skull:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_8m6o7"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("DarknessRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0.54902, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Skull:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_08bd4"]
+_data = {
+"RESET": SubResource("Animation_wqo58"),
+"fade_in": SubResource("Animation_8m6o7")
+}
+
 [node name="World" type="Node2D"]
 
-[node name="LevelGameManager" parent="." instance=ExtResource("1_u5r7q")]
+[node name="LevelGameManager" parent="." node_paths=PackedStringArray("level_ui", "death_animator") instance=ExtResource("1_u5r7q")]
 unique_name_in_owner = true
+level_ui = NodePath("../UI/LevelUI")
+death_animator = NodePath("../UI/DeathUI/Animator")
 
 [node name="Fruits" type="Node" parent="."]
 
@@ -35,3 +124,52 @@ shape = SubResource("WorldBoundaryShape2D_av2if")
 
 [node name="Player" parent="." instance=ExtResource("8_2lopg")]
 position = Vector2(-79, -149)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="LevelUI" parent="UI" node_paths=PackedStringArray("level_game_manager") instance=ExtResource("5_0uc7x")]
+level_game_manager = NodePath("../../LevelGameManager")
+
+[node name="DeathUI" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Animator" type="AnimationPlayer" parent="UI/DeathUI"]
+libraries = {
+"": SubResource("AnimationLibrary_08bd4")
+}
+
+[node name="DarknessRect" type="ColorRect" parent="UI/DeathUI"]
+self_modulate = Color(1, 0, 0, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="Skull" type="TextureRect" parent="UI/DeathUI"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -202.0
+offset_top = -202.0
+offset_right = 202.0
+offset_bottom = 202.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_ni57o")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="UI/DeathUI"]
+stream = ExtResource("7_hdxs8")
+volume_db = -16.0
+bus = &"UI"
