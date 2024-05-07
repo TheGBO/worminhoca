@@ -1,0 +1,111 @@
+[gd_scene load_steps=10 format=3 uid="uid://dg257gvktogdp"]
+
+[ext_resource type="Texture2D" uid="uid://dhln8tna8xscv" path="res://world/goal/goal.png" id="1_34hnk"]
+[ext_resource type="Script" path="res://world/goal/goal.gd" id="1_f80is"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d4tml"]
+atlas = ExtResource("1_34hnk")
+region = Rect2(0, 0, 13, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ob67e"]
+atlas = ExtResource("1_34hnk")
+region = Rect2(13, 0, 13, 13)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gglwy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d4tml")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ob67e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rrlif"]
+
+[sub_resource type="Animation" id="Animation_egbmt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1.53846, 1.53846)]
+}
+
+[sub_resource type="Animation" id="Animation_102dm"]
+resource_name = "star_spin"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.5, 3.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1.53846, 1.53846), Vector2(1.03288, 1.03288)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gpmas"]
+_data = {
+"RESET": SubResource("Animation_egbmt"),
+"star_spin": SubResource("Animation_102dm")
+}
+
+[node name="NextLevel" type="Area2D"]
+script = ExtResource("1_f80is")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-9.53674e-07, 4.76837e-07)
+scale = Vector2(1.53846, 1.53846)
+sprite_frames = SubResource("SpriteFrames_gglwy")
+autoplay = "default"
+frame_progress = 0.970127
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_rrlif")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_gpmas")
+}
+autoplay = "star_spin"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
