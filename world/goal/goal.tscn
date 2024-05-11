@@ -1,14 +1,14 @@
 [gd_scene load_steps=10 format=3 uid="uid://dg257gvktogdp"]
 
-[ext_resource type="Texture2D" uid="uid://dhln8tna8xscv" path="res://world/goal/goal.png" id="1_34hnk"]
 [ext_resource type="Script" path="res://world/goal/goal.gd" id="1_f80is"]
+[ext_resource type="Texture2D" uid="uid://dhln8tna8xscv" path="res://assets/sprites/goal.png" id="2_fimot"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d4tml"]
-atlas = ExtResource("1_34hnk")
+atlas = ExtResource("2_fimot")
 region = Rect2(0, 0, 13, 13)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ob67e"]
-atlas = ExtResource("1_34hnk")
+atlas = ExtResource("2_fimot")
 region = Rect2(13, 0, 13, 13)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gglwy"]
@@ -56,7 +56,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_102dm"]
 resource_name = "star_spin"
-length = 5.0
+length = 3.0
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -65,7 +65,7 @@ tracks/0/path = NodePath("AnimatedSprite2D:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 5),
+"times": PackedFloat32Array(0, 3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 6.28319]
@@ -77,10 +77,10 @@ tracks/1/path = NodePath("AnimatedSprite2D:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(1.5, 3.5),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 1.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(1.53846, 1.53846), Vector2(1.03288, 1.03288)]
+"values": [Vector2(1.03288, 1.03288), Vector2(2, 2), Vector2(1.03288, 1.03288)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gpmas"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmpsjoiw4qokh"
-path="res://.godot/imported/tangerine.png-7e5cb1862b7b33504af390794b8c557a.ctex"
+uid="uid://c4knwyxjwhsvo"
+path="res://.godot/imported/worm.png-2b46a3bf46a0b2512924f34aa3539598.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://world/pickup/tangerine.png"
-dest_files=["res://.godot/imported/tangerine.png-7e5cb1862b7b33504af390794b8c557a.ctex"]
+source_file="res://assets/sprites/worm.png"
+dest_files=["res://.godot/imported/worm.png-2b46a3bf46a0b2512924f34aa3539598.ctex"]
 
 [params]
 

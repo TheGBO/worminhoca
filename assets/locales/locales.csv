@@ -1,0 +1,10 @@
+key,en,pt,es
+MOVE_LR_INSTRUCTIONS,Move left/right with: [A] [D] or [←] [→],Mova para a esquerda/direita com: [A] [D] ou [←] [→],movéte izquierda/derecha con: [A] [D] o [←] [→]
+JUMP_INSTRUCTIONS,"jump with [W], [space] or [↑]","Pule com [W], [espaço] ou [↑]","salte con [W], [espacio] o [↑]"
+SPIKE_WARNING,The spikes will kill you.,Os espinhos te matam.,Las espinas te matan.
+KEYBOARD_ADVICE,Playing on a keyboard? read these instructions if you are confused.,Jogando em um teclado? Leia essas instruções se estiver confuso.,Jugando en un teclado? Lea las instrucciónes si estás confundido.
+UI_SCORE,score:,pontos:,puntos:
+UI_PLAY,PLAY,JOGAR,JUGAR
+UI_SETTINGS,SETTINGS,CONFIGURAÇÕES,AJUSTES
+UI_CREDITS,CREDITS,CRÉDITOS,CRÉDITOS
+MSG_THE_END,The end (at least for now),O fim (pelo menos por enquanto),El final (al menos por ahora)

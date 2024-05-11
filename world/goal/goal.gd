@@ -1,6 +1,10 @@
 extends Area2D
 
 const LEVEL_ROOT_PATH = "res://level/level_"
+@onready var level_game_manager = %LevelGameManager
+
+func _ready():
+	print(level_game_manager == null)
 
 func _on_body_entered(body):
 	print("collided with player")

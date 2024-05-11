@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://world/enemy/enemy.gd" id="1_8n0ev"]
 [ext_resource type="Texture2D" uid="uid://cqllv3n16j73n" path="res://world/enemy/skull_enemy.png" id="2_2it2p"]
 [ext_resource type="PackedScene" uid="uid://dwe51q20dr2gn" path="res://common/kill_zone.tscn" id="2_dda7s"]
-[ext_resource type="AudioStream" uid="uid://djf04gpykgurh" path="res://world/enemy/skull_laugh.mp3" id="4_wohjg"]
+[ext_resource type="AudioStream" uid="uid://djf04gpykgurh" path="res://assets/sfx/skull_laugh.mp3" id="4_wohjg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tnk0r"]
 atlas = ExtResource("2_2it2p")

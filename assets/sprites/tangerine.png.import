@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7tvrnwttk5fv"
-path="res://.godot/imported/platforms.png-48aa89514e18b7c1d0f8e00b7c547c75.ctex"
+uid="uid://cmpsjoiw4qokh"
+path="res://.godot/imported/tangerine.png-9b6d8d00f61bed2dde63b24bd11f6c5e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://world/platforms.png"
-dest_files=["res://.godot/imported/platforms.png-48aa89514e18b7c1d0f8e00b7c547c75.ctex"]
+source_file="res://assets/sprites/tangerine.png"
+dest_files=["res://.godot/imported/tangerine.png-9b6d8d00f61bed2dde63b24bd11f6c5e.ctex"]
 
 [params]
 

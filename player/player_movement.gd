@@ -7,10 +7,10 @@ extends Node2D
 #shortcuts
 
 #movement variables
-var min_speed = 100
+var min_speed = 80
 var max_speed = 125
 var speed = 100.0
-var acceleration_rate = 275
+var acceleration_rate = 175
 var deceleration_rate = 750
 
 #runtime variables
