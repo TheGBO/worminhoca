@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqllv3n16j73n"
-path="res://.godot/imported/skull_enemy.png-e993287ce2f0d7a342a090dee4431c21.ctex"
+uid="uid://bqqejrkgshyvc"
+path="res://.godot/imported/enemy_spikes.png-28b8ab7a5f4abac13eb3ec2535e6ce87.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://world/enemy/skull_enemy.png"
-dest_files=["res://.godot/imported/skull_enemy.png-e993287ce2f0d7a342a090dee4431c21.ctex"]
+source_file="res://assets/sprites/enemy_spikes.png"
+dest_files=["res://.godot/imported/enemy_spikes.png-28b8ab7a5f4abac13eb3ec2535e6ce87.ctex"]
 
 [params]
 

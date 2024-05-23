@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4knwyxjwhsvo"
-path="res://.godot/imported/worm.png-2b46a3bf46a0b2512924f34aa3539598.ctex"
+uid="uid://cqllv3n16j73n"
+path="res://.godot/imported/enemy_skull.png-3cf90b4c25d667a36caaced79fc7bc8a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/worm.png"
-dest_files=["res://.godot/imported/worm.png-2b46a3bf46a0b2512924f34aa3539598.ctex"]
+source_file="res://assets/sprites/enemy_skull.png"
+dest_files=["res://.godot/imported/enemy_skull.png-3cf90b4c25d667a36caaced79fc7bc8a.ctex"]
 
 [params]
 

@@ -1,0 +1,84 @@
+[gd_scene load_steps=12 format=3 uid="uid://cys8qcysowc76"]
+
+[ext_resource type="PackedScene" uid="uid://dugabner0mnf4" path="res://world/enemy/wandering_enemy.tscn" id="1_vk266"]
+[ext_resource type="Texture2D" uid="uid://b6j2tcip8e1m" path="res://assets/sprites/enemy_rubberslime.png" id="2_que7p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v14wu"]
+size = Vector2(13, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qgvby"]
+size = Vector2(15, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bry6q"]
+atlas = ExtResource("2_que7p")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_swi2u"]
+atlas = ExtResource("2_que7p")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g3pq3"]
+atlas = ExtResource("2_que7p")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gljm3"]
+atlas = ExtResource("2_que7p")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qje8d"]
+atlas = ExtResource("2_que7p")
+region = Rect2(96, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1osx3"]
+atlas = ExtResource("2_que7p")
+region = Rect2(120, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j0wnq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bry6q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_swi2u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g3pq3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gljm3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qje8d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1osx3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="rubberslime" instance=ExtResource("1_vk266")]
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_v14wu")
+
+[node name="CollisionShape2D" parent="KillZone" index="0"]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_qgvby")
+
+[node name="WanderingMovement" parent="." index="2"]
+can_jump = true
+speed = 90.0
+jump_force = 500.0
+
+[node name="FloorDetection" parent="." index="3"]
+position = Vector2(8, 0)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="5"]
+position = Vector2(0, -6)
+sprite_frames = SubResource("SpriteFrames_j0wnq")
+autoplay = "default"
+frame_progress = 0.0283097

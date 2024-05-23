@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bkroaa17h7rdq"]
+[gd_scene load_steps=8 format=3 uid="uid://bkroaa17h7rdq"]
 
 [ext_resource type="PackedScene" uid="uid://dggnw1g0o7nul" path="res://level/base_level.tscn" id="1_k0dth"]
 [ext_resource type="FontFile" uid="uid://bxp02atsww8r1" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="5_1uivh"]
 [ext_resource type="PackedScene" uid="uid://bk10qj3hn2wx5" path="res://world/pickup/tangerine.tscn" id="5_crn58"]
-[ext_resource type="Texture2D" uid="uid://cjp5u8jjlfa86" path="res://assets/sprites/sign.png" id="6_mxv05"]
+[ext_resource type="Texture2D" uid="uid://cjp5u8jjlfa86" path="res://assets/sprites/world_sign.png" id="6_mxv05"]
+[ext_resource type="PackedScene" uid="uid://ci0jxccv6sjqj" path="res://world/fake_wall.tscn" id="8_i2qo2"]
 [ext_resource type="PackedScene" uid="uid://begsyg8bwdg30" path="res://world/enemy/spikes.tscn" id="10_fbljb"]
 [ext_resource type="PackedScene" uid="uid://dg257gvktogdp" path="res://world/goal/goal.tscn" id="11_hovbg"]
 
@@ -71,3 +72,6 @@ position = Vector2(-228, -72)
 [node name="Sign" type="Sprite2D" parent="." index="9"]
 position = Vector2(-192, -15)
 texture = ExtResource("6_mxv05")
+
+[node name="FakeWall" parent="." index="10" instance=ExtResource("8_i2qo2")]
+position = Vector2(-234, -11)

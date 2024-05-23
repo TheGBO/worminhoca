@@ -1,89 +1,65 @@
-[gd_scene load_steps=13 format=3 uid="uid://beogpr5u53k5g"]
+[gd_scene load_steps=10 format=3 uid="uid://epu5lm2c05t1"]
 
-[ext_resource type="Script" path="res://world/enemy/enemy.gd" id="1_8n0ev"]
-[ext_resource type="Texture2D" uid="uid://cqllv3n16j73n" path="res://world/enemy/skull_enemy.png" id="2_2it2p"]
-[ext_resource type="PackedScene" uid="uid://dwe51q20dr2gn" path="res://common/kill_zone.tscn" id="2_dda7s"]
-[ext_resource type="AudioStream" uid="uid://djf04gpykgurh" path="res://assets/sfx/skull_laugh.mp3" id="4_wohjg"]
+[ext_resource type="PackedScene" uid="uid://dugabner0mnf4" path="res://world/enemy/wandering_enemy.tscn" id="1_rp5c8"]
+[ext_resource type="Texture2D" uid="uid://cqllv3n16j73n" path="res://assets/sprites/enemy_skull.png" id="2_ky6g2"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tnk0r"]
-atlas = ExtResource("2_2it2p")
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ru1l"]
+atlas = ExtResource("2_ky6g2")
 region = Rect2(0, 0, 18, 18)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gley1"]
-atlas = ExtResource("2_2it2p")
+[sub_resource type="AtlasTexture" id="AtlasTexture_5prib"]
+atlas = ExtResource("2_ky6g2")
 region = Rect2(18, 0, 18, 18)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jvi3u"]
-atlas = ExtResource("2_2it2p")
+[sub_resource type="AtlasTexture" id="AtlasTexture_o1eoc"]
+atlas = ExtResource("2_ky6g2")
 region = Rect2(36, 0, 18, 18)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_uaph5"]
-atlas = ExtResource("2_2it2p")
+[sub_resource type="AtlasTexture" id="AtlasTexture_bc4g1"]
+atlas = ExtResource("2_ky6g2")
 region = Rect2(0, 18, 18, 18)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vgcwr"]
-atlas = ExtResource("2_2it2p")
+[sub_resource type="AtlasTexture" id="AtlasTexture_aok38"]
+atlas = ExtResource("2_ky6g2")
 region = Rect2(18, 18, 18, 18)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jptyr"]
-atlas = ExtResource("2_2it2p")
+[sub_resource type="AtlasTexture" id="AtlasTexture_npin3"]
+atlas = ExtResource("2_ky6g2")
 region = Rect2(36, 18, 18, 18)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_74vup"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_vuxwo"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_tnk0r")
+"texture": SubResource("AtlasTexture_4ru1l")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gley1")
+"texture": SubResource("AtlasTexture_5prib")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jvi3u")
+"texture": SubResource("AtlasTexture_o1eoc")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_uaph5")
+"texture": SubResource("AtlasTexture_bc4g1")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vgcwr")
+"texture": SubResource("AtlasTexture_aok38")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jptyr")
+"texture": SubResource("AtlasTexture_npin3")
 }],
 "loop": true,
 "name": &"default",
 "speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_1qyui"]
-size = Vector2(12, 15)
+[node name="Skull" instance=ExtResource("1_rp5c8")]
 
-[node name="Enemy" type="Node2D"]
-script = ExtResource("1_8n0ev")
+[node name="WanderingMovement" parent="." index="2"]
+speed = 50.0
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(2, -5)
-sprite_frames = SubResource("SpriteFrames_74vup")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="5"]
+position = Vector2(3, 0)
+sprite_frames = SubResource("SpriteFrames_vuxwo")
 autoplay = "default"
-frame_progress = 0.593365
-
-[node name="KillZone" parent="." instance=ExtResource("2_dda7s")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
-position = Vector2(0, -6.5)
-shape = SubResource("RectangleShape2D_1qyui")
-
-[node name="FloorDetectionRaycast" type="RayCast2D" parent="."]
-position = Vector2(8, 0)
-target_position = Vector2(0, 5)
-
-[node name="WallDetectionRaycast" type="RayCast2D" parent="."]
-position = Vector2(6, -6)
-target_position = Vector2(3, 0)
-collision_mask = 2
-
-[node name="AttackSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_wohjg")
-bus = &"enemies"
-
-[connection signal="body_entered" from="KillZone" to="." method="_on_kill_zone_body_entered"]
+frame_progress = 0.0986834

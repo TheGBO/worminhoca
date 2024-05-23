@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://cklevk5idxs0n"]
 
-[ext_resource type="Texture2D" uid="uid://dgecpv71ujdhp" path="res://assets/sprites/bg.png" id="1_jy0ff"]
+[ext_resource type="Texture2D" uid="uid://dgecpv71ujdhp" path="res://assets/sprites/ui_menu_bg.png" id="1_jy0ff"]
 [ext_resource type="FontFile" uid="uid://bxp02atsww8r1" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_vuaop"]
 [ext_resource type="Theme" uid="uid://ca6nboi8dr8qw" path="res://assets/styles/ui_theme.tres" id="3_k3f3t"]
 [ext_resource type="Texture2D" uid="uid://bik4h22rgya0f" path="res://assets/sprites/flag_pt.png" id="4_nk8yg"]
@@ -102,6 +102,22 @@ theme = ExtResource("3_k3f3t")
 theme_override_constants/icon_max_width = 64
 text = "Português"
 icon = ExtResource("4_nk8yg")
+
+[node name="Panel" type="Panel" parent="bg"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -280.0
+offset_top = -189.5
+offset_right = 280.0
+offset_bottom = 189.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_k3f3t")
 
 [node name="MainMenuHandler" type="Node" parent="."]
 script = ExtResource("7_k7gxw")

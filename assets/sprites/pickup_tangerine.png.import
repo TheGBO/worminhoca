@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhln8tna8xscv"
-path="res://.godot/imported/goal.png-caeca320318dfd23043a8673f9ee35ed.ctex"
+uid="uid://cmpsjoiw4qokh"
+path="res://.godot/imported/pickup_tangerine.png-c5d538700d31dbd0f9f4d1dd337dfe5a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/goal.png"
-dest_files=["res://.godot/imported/goal.png-caeca320318dfd23043a8673f9ee35ed.ctex"]
+source_file="res://assets/sprites/pickup_tangerine.png"
+dest_files=["res://.godot/imported/pickup_tangerine.png-c5d538700d31dbd0f9f4d1dd337dfe5a.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmpsjoiw4qokh"
-path="res://.godot/imported/tangerine.png-9b6d8d00f61bed2dde63b24bd11f6c5e.ctex"
+uid="uid://b6j2tcip8e1m"
+path="res://.godot/imported/enemy_rubberslime.png-533beed77aaf4318c4d7c39675b1b369.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/tangerine.png"
-dest_files=["res://.godot/imported/tangerine.png-9b6d8d00f61bed2dde63b24bd11f6c5e.ctex"]
+source_file="res://assets/sprites/enemy_rubberslime.png"
+dest_files=["res://.godot/imported/enemy_rubberslime.png-533beed77aaf4318c4d7c39675b1b369.ctex"]
 
 [params]
 

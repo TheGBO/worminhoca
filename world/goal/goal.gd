@@ -7,7 +7,6 @@ func _ready():
 	print(level_game_manager == null)
 
 func _on_body_entered(body):
-	print("collided with player")
 	if body.is_in_group("Player"):
 		call_deferred("load_next_level")
 		

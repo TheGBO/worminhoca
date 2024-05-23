@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://dugabner0mnf4"]
+
+[ext_resource type="PackedScene" uid="uid://bjcf6p1iij1jr" path="res://world/enemy/base_enemy.tscn" id="1_m3gsq"]
+[ext_resource type="PackedScene" uid="uid://c8jdjcjmbtguw" path="res://world/enemy/wandering_movement.tscn" id="2_h1gpe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7lsoa"]
+size = Vector2(13, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aw8bd"]
+size = Vector2(15, 17)
+
+[node name="WanderingEnemy" instance=ExtResource("1_m3gsq")]
+collision_layer = 2
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_7lsoa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone" index="0"]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_aw8bd")
+
+[node name="WanderingMovement" parent="." index="2" node_paths=PackedStringArray("parent", "floorcast", "wallcast", "body") instance=ExtResource("2_h1gpe")]
+parent = NodePath("..")
+can_jump = false
+floorcast = NodePath("../FloorDetection")
+wallcast = NodePath("../WallDetection")
+body = NodePath("..")
+speed = 70.0
+
+[node name="FloorDetection" type="RayCast2D" parent="." index="3"]
+position = Vector2(10, 0)
+target_position = Vector2(0, 13)
+
+[node name="WallDetection" type="RayCast2D" parent="." index="4"]
+target_position = Vector2(14, 0)
+collision_mask = 5

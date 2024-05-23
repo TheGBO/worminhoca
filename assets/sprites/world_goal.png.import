@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjp5u8jjlfa86"
-path="res://.godot/imported/sign.png-ae4f2b9db346b8a35740be21a604fd0d.ctex"
+uid="uid://dhln8tna8xscv"
+path="res://.godot/imported/world_goal.png-ff849651170f267e5baae6ccc90946d0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/sign.png"
-dest_files=["res://.godot/imported/sign.png-ae4f2b9db346b8a35740be21a604fd0d.ctex"]
+source_file="res://assets/sprites/world_goal.png"
+dest_files=["res://.godot/imported/world_goal.png-ff849651170f267e5baae6ccc90946d0.ctex"]
 
 [params]
 

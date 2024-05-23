@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://ci0jxccv6sjqj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_myjty"]
+
+[node name="FakeWall" type="StaticBody2D"]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_myjty")

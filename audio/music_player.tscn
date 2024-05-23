@@ -1,14 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://ok5bcp8cpvdl"]
+[gd_scene load_steps=7 format=3 uid="uid://ok5bcp8cpvdl"]
 
 [ext_resource type="AudioStream" uid="uid://rp4i4d8ri3cw" path="res://assets/music/main worm.mp3" id="1_4u3pn"]
 [ext_resource type="Script" path="res://audio/music_player.gd" id="2_l6enj"]
 [ext_resource type="AudioStream" uid="uid://7lrpwckeiapx" path="res://assets/music/videlupum.mp3" id="3_6vyl0"]
 [ext_resource type="AudioStream" uid="uid://c2vuby4kpgb2p" path="res://assets/music/wormcore.mp3" id="4_f23kg"]
 [ext_resource type="AudioStream" uid="uid://daguhqouxxof8" path="res://assets/music/sneakyvermiculus.mp3" id="5_k1nyf"]
+[ext_resource type="AudioStream" uid="uid://bd2u4edv0507j" path="res://assets/music/sober sailor.mp3" id="6_fvx0f"]
 
 [node name="MusicPlayer" type="AudioStreamPlayer"]
 bus = &"BGM"
 script = ExtResource("2_l6enj")
-generic_tracks = Array[AudioStream]([ExtResource("1_4u3pn"), ExtResource("3_6vyl0"), ExtResource("4_f23kg"), ExtResource("5_k1nyf")])
+generic_tracks = Array[AudioStream]([ExtResource("1_4u3pn"), ExtResource("3_6vyl0"), ExtResource("4_f23kg"), ExtResource("5_k1nyf"), ExtResource("6_fvx0f")])
 
 [connection signal="finished" from="." to="." method="_on_finished"]

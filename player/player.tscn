@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://c27srkutp4j4c"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_h86lo"]
-[ext_resource type="Texture2D" uid="uid://c4knwyxjwhsvo" path="res://assets/sprites/worm.png" id="2_oxg7l"]
+[ext_resource type="Texture2D" uid="uid://c4knwyxjwhsvo" path="res://assets/sprites/player_worm.png" id="2_xr5hj"]
 [ext_resource type="AudioStream" uid="uid://bxxwlir4p01tr" path="res://assets/sfx/worm_jump.mp3" id="4_5ir4b"]
 [ext_resource type="Script" path="res://player/player_movement.gd" id="5_5koku"]
 [ext_resource type="AudioStream" uid="uid://cbb2ut4ixylr0" path="res://assets/sfx/worm_death.mp3" id="5_f5pu6"]
@@ -114,7 +114,7 @@ script = ExtResource("1_h86lo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -8)
-texture = ExtResource("2_oxg7l")
+texture = ExtResource("2_xr5hj")
 hframes = 5
 vframes = 4
 region_rect = Rect2(0, 0, 16, 16)
@@ -128,6 +128,7 @@ script = ExtResource("5_5koku")
 parent = NodePath("..")
 body = NodePath("..")
 sprite = NodePath("../Sprite2D")
+speed = 110.0
 
 [node name="JumpSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_5ir4b")

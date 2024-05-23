@@ -1,8 +1,9 @@
-[gd_resource type="Theme" load_steps=4 format=3 uid="uid://ca6nboi8dr8qw"]
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://ca6nboi8dr8qw"]
 
 [ext_resource type="FontFile" uid="uid://c052m223ttkbd" path="res://assets/fonts/LanaPixel.ttf" id="1_altrq"]
 [ext_resource type="StyleBox" uid="uid://db01emno8g1mb" path="res://assets/styles/button_hover.tres" id="1_jjdna"]
 [ext_resource type="StyleBox" uid="uid://dw0qaeb7n0i3h" path="res://assets/styles/button_normal.tres" id="2_3ysd6"]
+[ext_resource type="StyleBox" uid="uid://e8cfm34du4cn" path="res://assets/styles/panel_normal.tres" id="3_ru3fg"]
 
 [resource]
 default_font = ExtResource("1_altrq")
@@ -15,3 +16,4 @@ Button/styles/normal = ExtResource("2_3ysd6")
 Button/styles/pressed = null
 Label/colors/font_outline_color = Color(0, 0, 0, 1)
 Label/constants/outline_size = 8
+Panel/styles/panel = ExtResource("3_ru3fg")

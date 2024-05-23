@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bd2u4edv0507j"
+path="res://.godot/imported/sober sailor.mp3-871df97fc05e510a71ecd1623540e34b.mp3str"
+
+[deps]
+
+source_file="res://assets/music/sober sailor.mp3"
+dest_files=["res://.godot/imported/sober sailor.mp3-871df97fc05e510a71ecd1623540e34b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
