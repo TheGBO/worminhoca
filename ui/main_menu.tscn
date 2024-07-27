@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://cklevk5idxs0n"]
+[gd_scene load_steps=7 format=3 uid="uid://cklevk5idxs0n"]
 
-[ext_resource type="Texture2D" uid="uid://dgecpv71ujdhp" path="res://assets/sprites/ui_menu_bg.png" id="1_jy0ff"]
-[ext_resource type="FontFile" uid="uid://bxp02atsww8r1" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_vuaop"]
+[ext_resource type="Texture2D" uid="uid://dgecpv71ujdhp" path="res://assets/sprites/ui_menu_bg.png" id="1_vay0v"]
+[ext_resource type="Texture2D" uid="uid://b42emtqewy270" path="res://assets/sprites/flag_en.png" id="2_jo1wy"]
 [ext_resource type="Theme" uid="uid://ca6nboi8dr8qw" path="res://assets/styles/ui_theme.tres" id="3_k3f3t"]
-[ext_resource type="Texture2D" uid="uid://bik4h22rgya0f" path="res://assets/sprites/flag_pt.png" id="4_nk8yg"]
-[ext_resource type="Texture2D" uid="uid://b42emtqewy270" path="res://assets/sprites/flag_en.png" id="5_drnj2"]
-[ext_resource type="Texture2D" uid="uid://mbb6sls3qmlu" path="res://assets/sprites/flag_es.png" id="6_andov"]
+[ext_resource type="Texture2D" uid="uid://mbb6sls3qmlu" path="res://assets/sprites/flag_es.png" id="3_pv5ju"]
+[ext_resource type="Texture2D" uid="uid://bik4h22rgya0f" path="res://assets/sprites/flag_pt.png" id="4_qibg5"]
 [ext_resource type="Script" path="res://ui/main_menu_handler.gd" id="7_k7gxw"]
 
 [node name="Main Menu" type="Control"]
@@ -23,7 +22,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_jy0ff")
+texture = ExtResource("1_vay0v")
 
 [node name="MarginContainer" type="MarginContainer" parent="bg"]
 layout_mode = 1
@@ -49,7 +48,6 @@ size_flags_horizontal = 4
 theme_override_colors/font_color = Color(1, 0.501961, 0.854902, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 16
-theme_override_fonts/font = ExtResource("2_vuaop")
 theme_override_font_sizes/font_size = 64
 text = "WORMINHOCA"
 horizontal_alignment = 1
@@ -87,21 +85,21 @@ layout_mode = 2
 theme = ExtResource("3_k3f3t")
 theme_override_constants/icon_max_width = 64
 text = "English"
-icon = ExtResource("5_drnj2")
+icon = ExtResource("2_jo1wy")
 
 [node name="LangES" type="Button" parent="bg/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme = ExtResource("3_k3f3t")
 theme_override_constants/icon_max_width = 64
 text = "Español"
-icon = ExtResource("6_andov")
+icon = ExtResource("3_pv5ju")
 
 [node name="LangPT" type="Button" parent="bg/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 theme = ExtResource("3_k3f3t")
 theme_override_constants/icon_max_width = 64
 text = "Português"
-icon = ExtResource("4_nk8yg")
+icon = ExtResource("4_qibg5")
 
 [node name="Panel" type="Panel" parent="bg"]
 visible = false

@@ -11,8 +11,8 @@ func play_generic_track():
 		stream = random_song
 		play()
 	else:
-		play_generic_track()
-
+		#play_generic_track()
+		pass
 
 func _on_finished():
 	play_generic_track()
