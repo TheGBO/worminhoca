@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://k48m4uum783l"]
+[gd_scene load_steps=4 format=3 uid="uid://bo23gpvtbxukr"]
 
 [ext_resource type="PackedScene" uid="uid://dggnw1g0o7nul" path="res://level/base_level.tscn" id="1_t7ej4"]
 [ext_resource type="PackedScene" uid="uid://cys8qcysowc76" path="res://world/enemy/rubberslime.tscn" id="2_kymkw"]
